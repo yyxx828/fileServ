@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c97fa07d-3727-4cd0-bd7e-b5db4e40defb" name="linux12" url="http://192.168.1.12">
+        <fileTransfer host="192.168.1.12" port="22" accessType="SFTP" password="dfd2dfcbdf9bdf98df99df9bdf98df99" username="hadoop">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

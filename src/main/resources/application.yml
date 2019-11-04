@@ -1,0 +1,40 @@
+spring:
+  profiles:
+      active: dev
+
+product:
+  version: V3.0.20190601
+
+
+#数据量大于100KB时进行数据压缩
+server:
+  compression:
+    enabled: true
+    min-response-size: 100
+    mime-types:
+    - application/json
+    - application/javascript
+    - application/octet-stream
+    - application/xml
+    - text/html
+    - text/plain
+
+
+#  datasource:
+#     druid:
+#        url: jdbc:oracle:thin:@192.168.1.12:1521:orcl
+#        username: userflow
+#        password: userflow
+#        filters: stat,slf4j
+#        initialSize: 10
+#        maxActive: 100
+#        maxWait: 60000
+#        minIdle: 5
+#        timeBetweenEvictionRunsMillis: 60000
+#        minEvictableIdleTimeMillis: 300000
+#        validationQuery: SELECT 'x'
+#        testWhileIdle: true
+#        testOnBorrow: false
+#        testOnReturn: false
+#        poolPreparedStatements: true
+#        maxPoolPreparedStatementPerConnectionSize: 20
