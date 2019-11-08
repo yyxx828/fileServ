@@ -34,7 +34,7 @@ public class ApiSysController extends BaseController{
 
     /***
      * @return
-     * @desc 文件备份整理
+     * Created by 杨勇 on 2018-5 文件备份整理 只能管理员执行
      * @author 杨勇 19-7-23
      */
     @ApiOperation(value = "文件备份整理", notes = "文件备份整理", httpMethod = "POST")
@@ -42,6 +42,7 @@ public class ApiSysController extends BaseController{
     })
     @RequestMapping(value = "/back", method = RequestMethod.POST)
     public FileResBean back() {
+        admin();
         if(FileSysAgent.back()){
             return FileResBean.to(() -> Collections.singletonMap("message","备份成功"));
         }
@@ -51,7 +52,7 @@ public class ApiSysController extends BaseController{
 
     /***
      * @return
-     * @desc 文件备份整理
+     * Created by 杨勇 on 2018-5 文件备份整理 只能管理员执行
      * @author 杨勇 19-7-23
      */
     @ApiOperation(value = "文件系统还原", notes = "文件系统还原", httpMethod = "POST")
@@ -59,6 +60,7 @@ public class ApiSysController extends BaseController{
     })
     @RequestMapping(value = "/restore", method = RequestMethod.POST)
     public FileResBean restore() {
+        admin();
         if(FileSysAgent.restore()){
             return FileResBean.to(() -> Collections.singletonMap("message","还原成功"));
         }
@@ -67,7 +69,9 @@ public class ApiSysController extends BaseController{
 
     /***
      * @return
-     * @desc 系统账户注册
+     * Created by 杨勇 on 2018-5 系统账户注册
+     * @param systemId 要使用但系统ID,使用明文
+     * @param pwd 登陆密码,需要明文
      * @author 杨勇 19-8-12
      */
     @ApiOperation(value = "系统账户注册", notes = "系统账户注册", httpMethod = "POST")
@@ -94,8 +98,9 @@ public class ApiSysController extends BaseController{
 
 
     /***
-     * @return
-     * @desc 修改密码
+     * Created by 杨勇 on 2018-5 用户密码修改,只能在登陆条件下
+     * @param pwd 旧密码
+     * @param pwd1 新密码
      * @author 杨勇 19-8-12
      */
     @ApiOperation(value = "修改密码", notes = "修改密码", httpMethod = "POST")
@@ -120,7 +125,10 @@ public class ApiSysController extends BaseController{
 
     /***
      * @return
-     * @desc 系统账户登陆
+     * Created by 杨勇 on 2018-5 业务系统用户登陆
+     * @param systemId 要登陆但系统名,明文
+     * @param pwd 密码 明文
+     * 系统账户登陆
      * @author 杨勇 19-8-12
      */
     @ApiOperation(value = "系统账户登陆", notes = "系统账户登陆", httpMethod = "POST")
@@ -160,7 +168,7 @@ public class ApiSysController extends BaseController{
 
     /***
      * @return
-     * @desc 系统账户退出
+     * Created by 杨勇 on 2018-5 系统账户退出
      * @author 杨勇 19-8-12
      */
     @ApiOperation(value = "系统账户退出", notes = "系统账户登陆", httpMethod = "GET")
@@ -177,7 +185,8 @@ public class ApiSysController extends BaseController{
 
     /***
      * @return
-     * @desc 用户登陆信息验证
+     * Created by 杨勇 on 2018-5 用户登陆信息验证
+     * @param sessionId 用户验证信息,业务使用r参数传入
      * @author 杨勇 19-8-12
      */
     @ApiOperation(value = "用户登陆信息验证", notes = "用户登陆信息验证", httpMethod = "GET")

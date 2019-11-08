@@ -81,7 +81,7 @@ public interface FileCmd {
     }
 
 ///////////-------------------------------------不同平台,各自提供命令-------------------------------------------///////////
-    default String fileRecallCmd(String target,String link){
+    default String fileRecallCmd(String target, String link){
         return MessageFormat.format(cmd(),target,link);
     }
 

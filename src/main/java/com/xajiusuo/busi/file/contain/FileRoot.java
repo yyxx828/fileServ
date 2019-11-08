@@ -111,7 +111,7 @@ public interface FileRoot {
         Md5OutContain.out(f,mf, this).println(md5 + "\t" + f.getName() + "\t" + f.length() + "\t" + MD5FileUtil.getContentType(f) + "\t" + time);
     }
 
-    default File findMd5(File f,Md5File mf){
+    default File findMd5(File f, Md5File mf){
         String d = f.getParentFile().getName();
         File file =  rootDirCreate(mf.getHome(),mf.getProName(),mf.getType(),Content.MD5);
         for(File f0:file.listFiles()){
@@ -128,11 +128,11 @@ public interface FileRoot {
         return fileParentCreate(root(),a);
     }
 
-    default File rootDirCreate(Object...a){
+    default File rootDirCreate(Object... a){
         return dirCreate(root(),a);
     }
 
-    default File rootFileCreate(Object...a){
+    default File rootFileCreate(Object... a){
         return fileCreate(root(),a);
     }
 
@@ -157,7 +157,7 @@ public interface FileRoot {
     }
 
 
-    static File dirCreate(Object o, Object...a){
+    static File dirCreate(Object o, Object... a){
         File f = fileDefine(o,a);
         if(f != null){
             f.mkdirs();
@@ -165,7 +165,7 @@ public interface FileRoot {
         return f;
     }
 
-    static File fileCreate(Object o, Object...a){
+    static File fileCreate(Object o, Object... a){
         File f = fileParentCreate(o,a);
         if(f != null){
             try {
@@ -184,7 +184,7 @@ public interface FileRoot {
      * @param a
      * @return
      */
-    static File fileDefine(Object o, Object...a){
+    static File fileDefine(Object o, Object... a){
         File f;
         if(o instanceof String){
             f = new File((String)o);

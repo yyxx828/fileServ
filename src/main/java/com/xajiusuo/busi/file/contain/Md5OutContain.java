@@ -32,7 +32,7 @@ public class Md5OutContain {
      * 取文件对应的md5字典输出流
      * @param file 实际数据文件
      * @param mf 文件目录类
-     * @param route
+     * @param route 文件
      * @return
      */
     public static Out out(File file, FileRoot.Md5File mf, FileRoot route){
@@ -267,7 +267,7 @@ public class Md5OutContain {
                             remove(this);
                             throw new RuntimeException("文件大小异常,请重新上传");
                         }
-                    }else if(pos > this.file.length() || file.getSize() < 1024 * 1024 || pos < 0) {//单次小于1M
+                    }else if(pos > this.file.length() || pos < 0) {//单次小于1M
                         content.useing.remove(allSize);
                         remove(this);
                         this.file.delete();

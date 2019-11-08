@@ -19,7 +19,7 @@ public interface FileResBean {
         return bean;
     }
 
-    static FileResBean to(String md5,FileRoot.Md5File mf){
+    static FileResBean to(String md5, FileRoot.Md5File mf){
         return to(() -> {
             Map<String,Object> m = new HashMap();
             m.put("message","上传完成");

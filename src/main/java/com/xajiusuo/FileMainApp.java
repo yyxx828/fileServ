@@ -18,8 +18,9 @@ import java.util.concurrent.Executors;
 
 
 /**
- * Created by zlm on 2018/1/17.
- * @author zlm
+ * Created by 杨勇
+ * 程序启动入库
+ * @author 杨勇
  */
 @EnableScheduling
 @SpringBootApplication
